@@ -135,6 +135,7 @@ DEPENDENCIES
   capybara
   guard-rspec
   pry
+  rack
   rspec
   rubocop
   ruby-debug-ide
