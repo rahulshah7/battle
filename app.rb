@@ -2,10 +2,11 @@
 
 require 'sinatra/base'
 
-
 class Battle < Sinatra::Base
+  # session secret required per https://groups.google.com/d/msg/sinatrarb/pUFSoyQXyQs/XUycTqrsTeEJ
+  set :session_secret, 'here be dragons'
   enable :sessions
-  
+
   get '/' do
     erb :index
   end
