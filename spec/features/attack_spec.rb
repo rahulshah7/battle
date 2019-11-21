@@ -13,7 +13,7 @@ describe 'Attack Feature' do
 
       expect(page).to have_content 'Rahul attacked Gabby'
 
-      visit '/play'
+      click_link 'Continue'
 
       within(:css, '#player2_hp') do
         expect(page).to have_content '50HP'
