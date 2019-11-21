@@ -11,12 +11,10 @@ describe Player do
     end
   end
 
-  describe '#attack' do
-    subject(:player1) { described_class.new('Rahul') }
-    subject(:player2) { described_class.new('Gabby') }
-    it 'Reduces player 2 HP by 10' do
-      expect(player2.hp).to eq(described_class::DEFAULT_HP)
-      expect { player1.attack(player2) }.to change { player2.hp }.by(-10)
+  describe '#receive_damage' do
+    it 'reduces a players hp' do
+      expect(subject.hp).to eq(Player::DEFAULT_HP)
+      expect { subject.receive_damage }.to change { subject.hp }.by(-10)
     end
   end
 end
