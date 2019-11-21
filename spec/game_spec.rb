@@ -24,4 +24,18 @@ describe Game do
       game.attack(player2)
     end
   end
+
+  describe '#switch_player' do
+    it 'swaps who the current player is' do
+      expect { game.switch_player }
+        .to change { game.current_player }
+        .from(player1).to(player2)
+    end
+
+    it 'swaps who the other player is' do
+      expect { game.switch_player }
+        .to change { game.other_player }
+        .from(player2).to(player1)
+    end
+  end
 end

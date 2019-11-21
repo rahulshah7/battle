@@ -20,8 +20,13 @@ class Battle < Sinatra::Base
   end
 
   get '/attack' do
-    $game.attack($game.player2)
+    $game.attack($game.other_player)
     @game = $game
     erb :attack
+  end
+
+  get '/continue' do
+    $game.switch_player
+    redirect '/play'
   end
 end

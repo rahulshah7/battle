@@ -1,8 +1,10 @@
 <p><%= @game.player1.name %> vs. <%= @game.player2.name %></p>
 
+<p><%= @game.current_player.name %>'s turn</p>
 
 <div id="buttons">
  <a href="/attack"><button>Attack</button></a>
 </div>
 
-<p id="player2_hp"><%= @game.player2.hp %>HP</p>
+<p id="player1_hp"><%= @game.player1.name %>: <%= @game.player1.hp %>HP</p>
+<p id="player2_hp"><%= @game.player2.name %>: <%= @game.player2.hp %>HP</p>
