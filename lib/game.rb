@@ -17,4 +17,12 @@ class Game
   def switch_player
     @current_player, @other_player = @other_player, @current_player
   end
+
+  def loser
+    losing_player = [@player1, @player2].select do |player|
+      player.hp.zero?
+    end.first
+
+    losing_player ? losing_player.name : nil
+  end
 end

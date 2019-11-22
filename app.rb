@@ -26,7 +26,13 @@ class Battle < Sinatra::Base
   end
 
   get '/continue' do
+    redirect '/result' if $game.loser
+
     $game.switch_player
     redirect '/play'
+  end
+
+  get '/result' do
+    erb :result
   end
 end
